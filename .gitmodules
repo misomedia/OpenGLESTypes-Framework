@@ -1,0 +1,3 @@
+[submodule "OpenGLESTypes/Export"]
+	path = OpenGLESTypes/Export
+	url = git@github.com:misomedia/OpenGLESTypes.git
