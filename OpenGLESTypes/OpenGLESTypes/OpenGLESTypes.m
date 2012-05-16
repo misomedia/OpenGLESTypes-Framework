@@ -61,6 +61,37 @@ Vertex2fTexCoords2f Vertex2fTexCoords2fMake(GLfloat x, GLfloat y, GLfloat u, GLf
 
 void Vertex2fTexCoords2fSetPointer(Vertex2fTexCoords2f* vertex2fTexCoords2fs)
 {
-	glVertexPointer(2, GL_FLOAT, 4, &(vertex2fTexCoords2fs->vertex));
-	glTexCoordPointer(2, GL_UNSIGNED_BYTE, 4, &(vertex2fTexCoords2fs->texCoords));
+	glVertexPointer(2, GL_FLOAT, sizeof(Vertex2fTexCoords2f), &(vertex2fTexCoords2fs->vertex));
+	glTexCoordPointer(2, GL_UNSIGNED_BYTE, sizeof(Vertex2fTexCoords2f), &(vertex2fTexCoords2fs->texCoords));
 }
+
+Vertex3fColor4f Vertex3fColor4fMake(Vertex3f vertex, Color4f color)
+{
+    Vertex3fColor4f result;
+    result.vertex = vertex;
+    result.color = color;
+    return result;
+}
+
+void Vertex3fColor4fSetPointer(Vertex3fColor4f *vertex3fColor4fs)
+{
+    glVertexPointer(3, GL_FLOAT, sizeof(Vertex3fColor4f), &(vertex3fColor4fs->vertex));
+    glColorPointer(4, GL_FLOAT, sizeof(Vertex3fColor4f), &(vertex3fColor4fs->color));
+}
+
+Vertex3fColor4fTexCoords2f Vertex3fColor4fTexCoords2fMake(Vertex3f vertex, Color4f color, TexCoords2f texCoords)
+{
+    Vertex3fColor4fTexCoords2f result;
+    result.vertex = vertex;
+    result.color = color;
+    result.texCoords = texCoords;
+    return result;
+}
+
+void Vertex3fColor4fTexCoords2fSetPointer(Vertex3fColor4fTexCoords2f* vertex3fColor4fTexCoords2fs)
+{
+    glVertexPointer(3, GL_FLOAT, sizeof(Vertex3fColor4fTexCoords2f), &(vertex3fColor4fTexCoords2fs->vertex));
+    glColorPointer(4, GL_FLOAT, sizeof(Vertex3fColor4fTexCoords2f), &(vertex3fColor4fTexCoords2fs->color));
+    glTexCoordPointer(2, GL_FLOAT, sizeof(Vertex3fColor4fTexCoords2f), &(vertex3fColor4fTexCoords2fs->texCoords));
+}
+

@@ -44,6 +44,17 @@ void Color4uSetPointer(Color4u* color4us);
 
 typedef struct
 {
+    GLfloat r;
+    GLfloat g;
+    GLfloat b;
+    GLfloat a;
+}   Color4f;
+
+Color4f Color4fMake(GLfloat r, GLfloat g, GLfloat b, GLfloat a);
+void Color4fSetPointer(Color4f *color4fs);
+
+typedef struct
+{
 	GLfloat	u;
 	GLfloat	v;
 }	TexCoords2f;
@@ -59,3 +70,23 @@ typedef struct
 
 Vertex2fTexCoords2f Vertex2fTexCoords2fMake(GLfloat x, GLfloat y, GLfloat u, GLfloat v);
 void Vertex2fTexCoords2fSetPointer(Vertex2fTexCoords2f* vertex2fTexCoords2fs);
+
+typedef struct 
+{
+    Vertex3f vertex;
+    Color4f  color;
+}   Vertex3fColor4f;
+
+Vertex3fColor4f Vertex3fColor4fMake(Vertex3f vertex, Color4f color);
+void Vertex3fColor4fSetPointer(Vertex3fColor4f* vertex3fColor4fs);
+
+typedef struct 
+{
+    Vertex3f vertex;
+    Color4f  color;
+    TexCoords2f texCoords;
+}   Vertex3fColor4fTexCoords2f;
+
+Vertex3fColor4fTexCoords2f Vertex3fColor4fTexCoords2fMake(Vertex3f vertex, Color4f color, TexCoords2f texCoords);
+void Vertex3fColor4fTexCoords2fSetPointer(Vertex3fColor4fTexCoords2f* vertex3fColor4fTexCoords2fs);
+
