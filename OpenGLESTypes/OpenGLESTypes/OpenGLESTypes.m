@@ -41,6 +41,18 @@ Color4u Color4uMake(GLubyte r, GLubyte g, GLubyte b, GLubyte a)
 
 void Color4uSetPointer(Color4u* color4us){glColorPointer(4, GL_UNSIGNED_BYTE, 0, color4us);}
 
+Color4f Color4fMake(GLfloat r, GLfloat g, GLfloat b, GLfloat a)
+{
+	Color4f result;
+	result.r = r;
+	result.g = g;
+	result.b = b;
+	result.a = a;
+	return result;
+}
+
+void Color4fSetPointer(Color4f *color4fs){glColorPointer(4, GL_FLOAT, 0, color4fs);}
+
 TexCoords2f TexCoords2fMake(GLfloat u, GLfloat v)
 {
 	TexCoords2f result;
